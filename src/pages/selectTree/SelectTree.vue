@@ -1,7 +1,7 @@
 <!--下拉树页面 -->
 <template>
   <div class="SelectTree">
-    <el-form :model="form" inline>
+    <el-form :model="form" inline size="small">
       <el-form-item label="单选">
         <tree-select v-model="form.val" :options="treeOption" filterable></tree-select>
       </el-form-item>
