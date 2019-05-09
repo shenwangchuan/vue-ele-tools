@@ -5,9 +5,11 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
+import global_ from './assets/js/global_constant.js'
 
 Vue.config.productionTip = false
 Vue.use(ElementUI)
+Vue.prototype.global_ = global_
 
 /* eslint-disable no-new */
 new Vue({

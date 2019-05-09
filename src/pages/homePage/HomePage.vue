@@ -34,7 +34,9 @@
     height: 100%;
     .el-aside {
       border-right: solid 1px #e6e6e6;
+      overflow-x: hidden;
       .el-menu {
+        width: 100%;
         border: none;
       }
     }
