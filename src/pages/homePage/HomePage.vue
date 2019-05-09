@@ -1,18 +1,24 @@
 <!--首页 -->
 <template>
   <el-container class="HomePage">
-    <!--导航栏-->
-    <el-aside style="width: 200px">
-      <el-menu :default-openeds="['1']" router>
-        <el-submenu index="1">
-          <template slot="title"><i class="el-icon-message"></i>表单</template>
-          <el-menu-item index="/SelectTree">下拉树</el-menu-item>
-        </el-submenu>
-      </el-menu>
-    </el-aside>
-    <el-main>
-      <router-view/>
-    </el-main>
+    <el-header>
+      <img src="./../../assets/img/logo.png"/>
+      自定义组件
+    </el-header>
+    <el-container>
+      <!--导航栏-->
+      <el-aside style="width: 200px">
+        <el-menu :default-openeds="['1']" router>
+          <el-submenu index="1">
+            <template slot="title"><i class="el-icon-s-fold"></i>表单</template>
+            <el-menu-item index="/SelectTree">下拉树</el-menu-item>
+          </el-submenu>
+        </el-menu>
+      </el-aside>
+      <el-main>
+        <router-view/>
+      </el-main>
+    </el-container>
   </el-container>
 </template>
 
@@ -32,6 +38,14 @@
   .HomePage {
     width: 100%;
     height: 100%;
+    .el-header {
+      border-bottom: solid 1px #e6e6e6;
+      font-size: 24px;
+      color: #409eff;
+      display: flex;
+      align-items: center;
+    }
+
     .el-aside {
       border-right: solid 1px #e6e6e6;
       overflow-x: hidden;

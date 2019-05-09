@@ -1,15 +1,17 @@
 <!--下拉树页面 -->
 <template>
   <div class="SelectTree">
-    <el-form :model="form" inline size="small">
-      <el-form-item label="单选">
-        <tree-select v-model="form.val" :options="treeOption" filterable></tree-select>
-      </el-form-item>
-      <el-form-item label="多选">
-        <tree-select v-model="form.vals" :options="treeOption" multiple filterable></tree-select>
-      </el-form-item>
-    </el-form>
-    <el-card shadow="never" header="属性">
+    <el-card shadow="never" header="tree-select">
+      <el-form :model="form" inline size="small">
+        <el-form-item label="单选">
+          <tree-select v-model="form.val" :options="treeOption" filterable></tree-select>
+        </el-form-item>
+        <el-form-item label="多选">
+          <tree-select v-model="form.vals" :options="treeOption" multiple filterable></tree-select>
+        </el-form-item>
+      </el-form>
+    </el-card>
+    <el-card shadow="never" header="属性" style="margin-top: 20px">
       <GridTable :data="tableData" :col-data="global_.attrTableCol" row-key="param"></GridTable>
     </el-card>
   </div>
