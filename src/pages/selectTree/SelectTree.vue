@@ -11,7 +11,7 @@
         </el-form-item>
       </el-form>
     </el-card>
-    <el-card shadow="never" header="属性" style="margin-top: 20px">
+    <el-card shadow="never" header="属性">
       <GridTable :data="tableData" :col-data="global_.attrTableCol" row-key="param"></GridTable>
     </el-card>
   </div>

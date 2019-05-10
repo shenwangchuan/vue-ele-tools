@@ -1,20 +1,31 @@
-<!--带th的表格 -->
+<!--数据表格 （自动生成表头）-->
 <template>
-  <el-table :data="data" :row-key="rowKey">
+  <el-table :data="data"
+            :height="height"
+            :maxHeight="maxHeight"
+            :stripe="stripe"
+            :border="border"
+            :size="size"
+            :fit="fit"
+            :showHeader="showHeader"
+            :highlightCurrentRow="highlightCurrentRow"
+            :row-key="rowKey"
+  >
     <template v-for="item in colData">
       <!--自定义列内容-->
       <el-table-column
         v-if="item.slot"
         :type="item.type"
         :fixed="item.fixed"
+        :align="item.align ? item.align : align"
+        :header-align="item.headerAlign ? item.headerAlign : headerAlign"
         :width="item.width"
-        :align="item.align"
         :min-width="item.minWidth"
         :label="item.label"
         :prop="item.prop"
         :formatter="item.formatter">
         <template slot-scope="scope">
-          <slot :name="item.prop" :data="scope.row"></slot>
+          <slot :name="item.prop" :row="scope.row"></slot>
         </template>
       </el-table-column>
       <!--正常显示列内容-->
@@ -22,8 +33,9 @@
         v-else
         :type="item.type"
         :fixed="item.fixed"
+        :align="item.align ? item.align : align"
+        :header-align="item.headerAlign ? item.headerAlign : headerAlign"
         :width="item.width"
-        :align="item.align"
         :min-width="item.minWidth"
         :label="item.label"
         :prop="item.prop"
@@ -40,25 +52,34 @@
         type: Array,
         default() {return []}
       },
+      align: String,
+      headerAlign: String,
+      // ===================el-table自带属性↓======================
       data: { //表格内容数据
         type: Array,
         default() {return []}
       },
-      rowKey: {
-        type: String
-      }
+      height: [String, Number],
+      maxHeight: [String, Number],
+      stripe: Boolean,
+      border: Boolean,
+      size: String,
+      fit: {
+        type: Boolean,
+        default: true
+      },
+      showHeader: {
+        type: Boolean,
+        default: true
+      },
+      highlightCurrentRow: Boolean,
+      rowKey: String,
     },
     data() {
       return {
       }
     },
     created() {
-    },
-    methods: {}
+    }
   }
 </script>
-
-<style scoped lang="scss" type="text/scss">
-  .HeadTable {
-  }
-</style>

@@ -8,7 +8,7 @@
     <el-container>
       <!--导航栏-->
       <el-aside style="width: 200px">
-        <el-menu :default-openeds="['1']" router>
+        <el-menu :default-openeds="['1','2']" :default-active="$route.path" router>
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-s-fold"></i>表单</template>
             <el-menu-item index="/SelectTree">下拉树</el-menu-item>
@@ -21,7 +21,7 @@
       </el-aside>
       <el-main>
         <el-scrollbar style="height: 100%">
-          <div style="padding: 20px">
+          <div class="content">
             <router-view/>
           </div>
         </el-scrollbar>
@@ -63,6 +63,14 @@
     }
     .el-main {
       padding: 0;
+      .content {
+        padding: 20px;
+        /deep/ >div{
+          >.el-card+.el-card {
+            margin-top: 20px;
+          }
+        }
+      }
       .el-scrollbar /deep/ .el-scrollbar__wrap {
         overflow-x: auto;
       }
