@@ -2,7 +2,7 @@
 <template>
   <el-container class="HomePage">
     <el-header>
-      <img src="./../../assets/img/logo.png"/>
+      <img src="./logo.png"/>
       自定义组件
     </el-header>
     <el-container>
