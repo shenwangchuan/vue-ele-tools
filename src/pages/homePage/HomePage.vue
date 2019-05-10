@@ -20,7 +20,11 @@
         </el-menu>
       </el-aside>
       <el-main>
-        <router-view/>
+        <el-scrollbar style="height: 100%">
+          <div style="padding: 20px">
+            <router-view/>
+          </div>
+        </el-scrollbar>
       </el-main>
     </el-container>
   </el-container>
@@ -49,13 +53,18 @@
       display: flex;
       align-items: center;
     }
-
     .el-aside {
       border-right: solid 1px #e6e6e6;
       overflow-x: hidden;
       .el-menu {
         width: 100%;
         border: none;
+      }
+    }
+    .el-main {
+      padding: 0;
+      .el-scrollbar /deep/ .el-scrollbar__wrap {
+        overflow-x: auto;
       }
     }
   }
