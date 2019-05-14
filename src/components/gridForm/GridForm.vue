@@ -27,14 +27,37 @@
       <!--下拉框-->
       <el-select v-if="item.type==='select'"
                  v-model="form[item.name]"
+                 :multiple="item.multiple"
+                 :disabled="item.disabled"
+                 :clearable="item.clearable"
+                 :filterable="item.filterable"
+                 :allow-create="item.allowCreate"
+                 :collapse-tags="item.collapseTags"
                  :placeholder="item.placeholder">
         <el-option
           v-for="opt in item.options"
           :key="item.props ? opt[item.props.value] : opt[props.value]"
-          :label="item.props ? opt[item.props.value] : opt[props.value]"
+          :label="item.props ? opt[item.props.label] : opt[props.label]"
           :value="item.props ? opt[item.props.value] : opt[props.value]">
         </el-option>
       </el-select>
+      <!--日期框-->
+      <el-date-picker v-if="item.type === 'date'"
+                      v-model="form[item.name]"
+                      :type="item.dateType"
+                      :readonly="item.readonly"
+                      :disabled="item.disabled"
+                      :value-format="item.valueFormat"
+                      :placeholder="item.placeholder">
+      </el-date-picker>
+      <!--插槽-->
+      <template v-if="item.type === 'slot'">
+        <slot :name="item.name" :item="item" :form="form"></slot>
+      </template>
+    </el-form-item>
+
+    <el-form-item :class="{'btns-block': btnBlock}">
+      <slot></slot>
     </el-form-item>
   </el-form>
 </template>
@@ -45,27 +68,43 @@
     props: {
       data: {
         type: Array,
-        default() { return [] }
+        default() {
+          return []
+        }
       },
       size: String,
-      disabled: Boolean
+      disabled: Boolean,
+      model: {
+        type: Object,
+        default() { return {} }
+      },
+      btnBlock: Boolean
     },
     data() {
       return {
-        form: {},
-        props:{
-          value:'value',
-          label:'label'
+        props: { //下拉框字段对应关系
+          value: 'value',
+          label: 'label'
         }
       }
     },
     created() {
     },
-    methods: {}
+    computed: {
+      form() {
+        return this.model
+      }
+    },
+    methods: {
+    }
   }
 </script>
 
 <style scoped lang="scss" type="text/scss">
   .GridForm {
+    .btns-block {
+      display: block;
+      text-align: center;
+    }
   }
 </style>

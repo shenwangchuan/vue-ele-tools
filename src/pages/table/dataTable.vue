@@ -15,7 +15,7 @@
 </template>
 
 <script type="es6">
-  import GridTable from '@/components/grigTable/GridTable.vue'
+  import GridTable from '@/components/gridTable/GridTable.vue'
   export default {
     name: "dataTable",
     components: { GridTable },

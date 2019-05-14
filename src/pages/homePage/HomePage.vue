@@ -12,6 +12,7 @@
           <el-submenu index="1">
             <template slot="title"><i class="el-icon-s-fold"></i>表单</template>
             <el-menu-item index="/SelectTree">下拉树</el-menu-item>
+            <el-menu-item index="/dataForm">数据表单</el-menu-item>
           </el-submenu>
           <el-submenu index="2">
             <template slot="title"><i class="el-icon-s-fold"></i>表格</template>

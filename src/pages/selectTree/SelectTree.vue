@@ -19,7 +19,7 @@
 
 <script type="es6">
   import TreeSelect from '@/components/treeSelect/TreeSelect.vue'
-  import GridTable from '@/components/grigTable/GridTable.vue'
+  import GridTable from '@/components/gridTable/GridTable.vue'
   export default {
     name: "SelectTree",
     components: {TreeSelect,GridTable},

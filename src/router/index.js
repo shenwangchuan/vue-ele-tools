@@ -18,6 +18,10 @@ export default new Router({
           path: '/dataTable',
           name: 'dataTable',
           component: ()=>import('@/pages/table/dataTable.vue')
+        }, { //数据表单
+          path: '/dataForm',
+          name: 'dataForm',
+          component: ()=>import('@/pages/form/dataForm.vue')
         }
       ]
     }
