@@ -10,6 +10,13 @@
             :showHeader="showHeader"
             :highlightCurrentRow="highlightCurrentRow"
             :row-key="rowKey"
+            @select="emitEvent('select',arguments)"
+            @cell-click="emitEvent('cell-click',arguments)"
+            @cell-dblclick="emitEvent('cell-dblclick',arguments)"
+            @row-click="emitEvent('row-click',arguments)"
+            @row-contextmenu="emitEvent('row-contextmenu',arguments)"
+            @row-dblclick="emitEvent('row-dblclick',arguments)"
+            @current-change="emitEvent('current-change',arguments)"
   >
     <template v-for="item in colData">
       <!--自定义列内容-->
@@ -80,6 +87,12 @@
       }
     },
     created() {
+    },
+    methods: {
+      // 表格事件
+      emitEvent(eventName,param) {
+        this.$emit(eventName,param)
+      }
     }
   }
 </script>

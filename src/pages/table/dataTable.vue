@@ -11,6 +11,9 @@
     <el-card shadow="never" header="属性">
       <grid-table :data="attrTableData" :col-data="global_.attrTableCol" row-key="index"></grid-table>
     </el-card>
+    <el-card shadow="never" header="事件">
+      <grid-table :data="eventTableData" :col-data="global_.eventTableCol"></grid-table>
+    </el-card>
   </div>
 </template>
 
@@ -54,12 +57,14 @@
         }],
         tableCol:[],
 
-        attrTableData:[]
+        attrTableData:[],//属性
+        eventTableData:[], //事件
       }
     },
     created() {
       this.initTestData()
-      this.initData()
+      this.initAttrTable()
+      this.initEventTable()
     },
     methods: {
       formatterName(row, column, cellValue, index) {
@@ -74,7 +79,7 @@
           {label: '地址', prop:'address'},
         ]
       },
-      initData() {
+      initAttrTable() {
         const addIndex = (arr,pre)=>{
           const preIndex = pre ? pre+'-' : '';
           arr.forEach(value=>{
@@ -111,6 +116,17 @@
         ]
         addIndex(attrTable)
         this.attrTableData = attrTable
+      },
+      initEventTable() {
+        this.eventTableData = [
+          {name:'select',description:'当用户手动勾选数据行的 Checkbox 时触发的事件',param:'selection, row'},
+          {name:'cell-click',description:'当某个单元格被点击时会触发该事件',param:'row, column, cell, event'},
+          {name:'cell-dblclick',description:'当某个单元格被双击时会触发该事件',param:'row, column, cell, event'},
+          {name:'row-click',description:'当某一行被点击时会触发该事件',param:'row, column, event'},
+          {name:'row-contextmenu',description:'当某一行被鼠标右键点击时会触发该事件',param:'row, column, event'},
+          {name:'row-dblclick',description:'当某一行被双击时会触发该事件',param:'row, column, event'},
+          {name:'current-change',description:'当表格的当前行发生变化的时候会触发该事件，如果要高亮当前行，请打开表格的 highlight-current-row 属性',param:'currentRow, oldCurrentRow'},
+        ]
       }
     }
   }
