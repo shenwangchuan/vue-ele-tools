@@ -23,7 +23,9 @@
       return {
         form: {
           sex:1,
-          age:12
+          age:12,
+          city:'bishan',
+          // citys:[]
         },
         formData:[],
         tableData:[]
@@ -34,11 +36,62 @@
         {value:1,name:'男'},
         {value:2,name:'女'}
       ]
+      const treeOption = [ //测试数据
+          {
+            label: '重庆',
+            value: 'chongqing',
+            children: [
+              {
+                label: '沙坪坝',
+                value: 'shapingba',
+              },{
+              label: '九龙坡',
+              value: 'jiulongpo',
+            },{
+              label: '璧山',
+              value: 'bishan',
+            }
+              ]
+          },
+          {
+            label: '四川',
+            value: 'sichuan',
+            children: [
+              {
+                label: '成都',
+                value: 'chengdu',
+                children: [
+                  {
+                    label: '金牛区',
+                    value: 'jinniu',
+                  },{
+                  label: '成华区',
+                  value: 'chenghua',
+                }
+                  ]
+              },{
+              label: '绵阳',
+              value: 'mianyang',
+            },{
+              label: '达州',
+              value: 'dazhou',
+            },{
+              label: '眉山',
+              value: 'meishan',
+            },{
+              label: '自贡',
+              value: 'zigong',
+            }
+              ]
+          },
+          ]
       this.formData = [
         {type:'input',name:'name',label:'姓名',rules:[{max:4,message:'姓名长度不能超过4'}] },
         {type:'select',name:'sex',label:'性别',options: sexOptions,props:{value:'value',label:'name'}},
         {type:'date',name:'birthday',label:'出生日期',dateType:'date' },
-        {type:'slot',name:'age',label:'年龄'}
+        {type:'slot',name:'age',label:'年龄'},
+        {type:'valCascader',name:'city',label:'出生城市',options:treeOption },
+        {type:'treeSelect',name:'citys',label:'居住城市(可多选)',options:treeOption,multiple: true}
       ]
       this.initAttrTable()
     },
@@ -70,6 +123,9 @@
         addIndex(attrTable)
         this.tableData = attrTable
       },
+      getFormVal() {
+        console.log(this.form)
+      }
     }
   }
 </script>

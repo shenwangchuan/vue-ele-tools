@@ -48,18 +48,21 @@
           return []
         }
       },
+      multiple: { // 是否可多选
+        type: Boolean,
+        default: false
+      },
       value: { //绑定值
         type: [String, Number, Array],
+        default() {
+          return this.multiple ? [] : ''
+        }
       },
       accordion: { //是否每次只展开一个同级树节点
         type: Boolean,
         default: false
       },
       size: String,
-      multiple: { // 是否可多选
-        type: Boolean,
-        default: false
-      },
       filterable: { // 是否可搜索
         type: Boolean,
         default: false
