@@ -53,6 +53,9 @@
       color: #409eff;
       display: flex;
       align-items: center;
+      +.el-container {
+        height: calc(100% - 60px);
+      }
     }
     .el-aside {
       border-right: solid 1px #e6e6e6;
