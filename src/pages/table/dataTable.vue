@@ -2,6 +2,7 @@
 <template>
   <div class="dataTable">
     <el-card shadow="never" header="grid-table">
+      <p>根据提供的数据快速生成表格，相对于element ui 的el-table组件，需传入表头数据数组，支持自定义和格式化列内容</p>
       <grid-table :data="tableData" :col-data="tableCol">
         <template slot="date" slot-scope="scope">
           <div><i class="el-icon-time"></i> {{scope.row.date}}</div>
@@ -96,6 +97,7 @@
           {param:'align',description:'对齐方式',type:'string',optional:'left/center/right',default:'left'},
           {param:'header-align',description:'表头对齐方式，若不设置该项，则使用表格的对齐方式',type:'string',optional:'left/center/right',default:'—'},
           {param:'formatter',description:'用来格式化内容',type:'Function(row, column, cellValue, index)',optional:'—',default:'—'},
+          {param:'slot',description:'该列是否以插槽形式自定义显示内容，为true则以该列prop字段的值为插槽名定义显示内容',type:'boolean',optional:'—',default:'false'},
         ]
         addIndex(colAttr,'col')
         // 属性表格内容

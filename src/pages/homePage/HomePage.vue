@@ -73,6 +73,11 @@
           >.el-card+.el-card {
             margin-top: 20px;
           }
+          .el-card__body>p {
+            padding-bottom: 10px;
+            color: #606266;
+            font-size: 14px;
+          }
         }
       }
       .el-scrollbar /deep/ .el-scrollbar__wrap {
