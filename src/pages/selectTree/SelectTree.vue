@@ -1,28 +1,27 @@
 <!--下拉树页面 -->
 <template>
   <div class="SelectTree">
-    <el-card shadow="never" header="tree-select">
+    <el-card shadow="never" header="v-el-tree-select">
       <el-form :model="form" inline size="small">
         <el-form-item label="单选">
-          <tree-select v-model="form.val" :options="treeOption" filterable></tree-select>
+          <v-el-tree-select v-model="form.val" :options="treeOption" filterable></v-el-tree-select>
         </el-form-item>
         <el-form-item label="多选">
-          <tree-select v-model="form.vals" :options="treeOption" multiple filterable></tree-select>
+          <v-el-tree-select v-model="form.vals" :options="treeOption" multiple filterable></v-el-tree-select>
         </el-form-item>
       </el-form>
     </el-card>
     <el-card shadow="never" header="属性">
-      <GridTable :data="tableData" :col-data="global_.attrTableCol" row-key="param"></GridTable>
+      <v-el-table :data="tableData" :col-data="global_.attrTableCol" row-key="param"></v-el-table>
     </el-card>
   </div>
 </template>
 
 <script type="es6">
-  import TreeSelect from '@/components/treeSelect/TreeSelect.vue'
-  import GridTable from '@/components/gridTable/GridTable.vue'
+  import {VElTreeSelect, VElTable} from '@/components/index'
   export default {
     name: "SelectTree",
-    components: {TreeSelect,GridTable},
+    components: { VElTreeSelect,VElTable },
     data() {
       return {
         form: {

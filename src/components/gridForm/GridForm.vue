@@ -1,6 +1,6 @@
 <!--数据表单 -->
 <template>
-  <el-form class="GridForm" :model="form" inline :size="size" :disabled="disabled">
+  <el-form class="VElForm" :model="form" inline :size="size" :disabled="disabled">
     <el-form-item
       v-for="item in data"
       :key="item.name"
@@ -64,15 +64,15 @@
         :placeholder="item.placeholder"
       ></el-cascader>
       <!--值为String的级联选择器-->
-      <ValCascader
+      <v-el-val-cascader
         v-if="item.type === 'valCascader'"
         :options="item.options"
         :props="item.props"
         v-model="form[item.name]"
         :placeholder="item.placeholder"
-      ></ValCascader>
+      ></v-el-val-cascader>
       <!--下拉树-->
-      <TreeSelect
+      <v-el-tree-select
         v-if="item.type === 'treeSelect'"
         v-model="form[item.name]"
         :options="item.options"
@@ -84,7 +84,7 @@
         :disabled="item.disabled"
         :accordion="item.accordion"
         :check-strictly="item.checkStrictly"
-      ></TreeSelect>
+      ></v-el-tree-select>
       <!--插槽-->
       <template v-if="item.type === 'slot'">
         <slot :name="item.name" :item="item" :form="form"></slot>
@@ -98,11 +98,11 @@
 </template>
 
 <script type="es6">
-  import ValCascader from '@/components/valCascader/ValCascader.vue'
-  import TreeSelect from '@/components/treeSelect/TreeSelect.vue'
+  import VElTreeSelect from './../treeSelect/TreeSelect'
+  import VElValCascader from './../valCascader/ValCascader'
 export default {
-  name: "GridForm",
-  components: {ValCascader,TreeSelect},
+  name: "v-el-form",
+  components: {VElTreeSelect,VElValCascader},
   props: {
     data: {
       type: Array,

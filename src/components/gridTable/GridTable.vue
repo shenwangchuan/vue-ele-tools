@@ -1,6 +1,6 @@
 <!--数据表格 （自动生成表头）-->
 <template>
-  <el-table :data="data"
+  <el-table class="VElTable" :data="data"
             :height="height"
             :maxHeight="maxHeight"
             :stripe="stripe"
@@ -53,7 +53,7 @@
 
 <script type="es6">
   export default {
-    name: "HeadTable",
+    name: "v-el-table",
     props: {
       colData: { //表头数据
         type: Array,
@@ -85,8 +85,6 @@
     data() {
       return {
       }
-    },
-    created() {
     },
     methods: {
       // 表格事件

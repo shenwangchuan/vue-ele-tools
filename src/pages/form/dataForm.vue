@@ -1,24 +1,23 @@
 <!--表单 -->
 <template>
   <div class="dataForm">
-    <el-card shadow="never" header="grid-form 数据表单">
-      <GridForm ref="gridForm" :model="form" :data="formData" size="small">
+    <el-card shadow="never" header="v-el-form 数据表单">
+      <v-el-form class="v-el-form" ref="gridForm" :model="form" :data="formData" size="small">
         <el-button @click="getFormVal">提交</el-button>
         <el-input-number slot="age" slot-scope="scope" v-model="scope.form.age" :min="0" :max="99"></el-input-number>
-      </GridForm>
+      </v-el-form>
     </el-card>
     <el-card shadow="never" header="属性">
-      <grid-table :data="tableData" :col-data="global_.attrTableCol" row-key="index"></grid-table>
+      <v-el-table :data="tableData" :col-data="global_.attrTableCol" row-key="index"></v-el-table>
     </el-card>
   </div>
 </template>
 
 <script type="es6">
-  import GridForm from '@/components/gridForm/GridForm.vue'
-  import GridTable from '@/components/gridTable/GridTable.vue'
+  import { VElForm,VElTable } from '@/components/index'
   export default {
     name: "dataForm",
-    components: { GridForm, GridTable },
+    components: { VElForm, VElTable },
     data() {
       return {
         form: {
@@ -129,8 +128,3 @@
     }
   }
 </script>
-
-<style scoped lang="scss" type="text/scss">
-  .dataForm {
-  }
-</style>

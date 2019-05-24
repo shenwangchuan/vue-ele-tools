@@ -16,7 +16,7 @@
 
 <script type="es6">
   export default {
-    name: "ValCascader",
+    name: "v-el-val-cascader",
     props: {
       value: String,
       placeholder: String,

@@ -1,28 +1,28 @@
 <!--数据表格 -->
 <template>
   <div class="dataTable">
-    <el-card shadow="never" header="grid-table">
+    <el-card shadow="never" header="v-el-table">
       <p>根据提供的数据快速生成表格，相对于element ui 的el-table组件，需传入表头数据数组，支持自定义和格式化列内容</p>
-      <grid-table :data="tableData" :col-data="tableCol">
+      <v-el-table :data="tableData" :col-data="tableCol">
         <template slot="date" slot-scope="scope">
           <div><i class="el-icon-time"></i> {{scope.row.date}}</div>
         </template>
-      </grid-table>
+      </v-el-table>
     </el-card>
     <el-card shadow="never" header="属性">
-      <grid-table :data="attrTableData" :col-data="global_.attrTableCol" row-key="index"></grid-table>
+      <v-el-table :data="attrTableData" :col-data="global_.attrTableCol" row-key="index"></v-el-table>
     </el-card>
     <el-card shadow="never" header="事件">
-      <grid-table :data="eventTableData" :col-data="global_.eventTableCol"></grid-table>
+      <v-el-table :data="eventTableData" :col-data="global_.eventTableCol"></v-el-table>
     </el-card>
   </div>
 </template>
 
 <script type="es6">
-  import GridTable from '@/components/gridTable/GridTable.vue'
+  import { VElTable } from '@/components/index'
   export default {
     name: "dataTable",
-    components: { GridTable },
+    components: { VElTable },
     data() {
       return {
         // 测试数据

@@ -30,7 +30,7 @@
 
 <script type="es6">
   export default {
-    name: "TreeSelect",
+    name: "v-el-tree-select",
     props: {
       props: { //配置项
         type: Object,
