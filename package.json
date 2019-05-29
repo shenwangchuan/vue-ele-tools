@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "vue+elementUI自定义组件",
   "author": "shenwangchuan <yisu512@sina.com>",
-  "private": true,
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
@@ -61,5 +60,15 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shenwangchuan/vue-ele-tools.git"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shenwangchuan/vue-ele-tools/issues"
+  },
+  "homepage": "https://github.com/shenwangchuan/vue-ele-tools#readme"
 }
