@@ -1,11 +1,11 @@
 # vue-ele-tools
-基于vue+elementUI的自定义组件
+基于vue+elementUI(2.8.2)的自定义组件
 
-##演示地址
+## 演示地址
 [Demo](https://shenwangchuan.github.io/vue-ele-tools/dist)
 
 ## 安装
-npm install git+https://github.com/shenwangchuan/vue-ele-tools.git
+npm install vue-ele-tools
 
 ## 使用
 在main.js文件中  
