@@ -10,9 +10,9 @@ import VElTools from 'vue-ele-tools/src/components/index'
 Vue.use(VElTools)
 
 ## 内容
- 1.树形下拉选择器(v-el-tree-select)
- 2.数据表格（v-el-table）
- 3.数据表单（v-el-form）
+ 1.树形下拉选择器(v-el-tree-select)  
+ 2.数据表格（v-el-table）  
+ 3.数据表单（v-el-form）  
  
 ## 演示地址
 [Demo](https://shenwangchuan.github.io/vue-ele-tools/dist)
