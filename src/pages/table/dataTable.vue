@@ -75,7 +75,7 @@
         this.tableCol = [
           {type:'index',label: '#'},
           {type:'selection'},
-          {label: '日期', prop:'date',slot: true},
+          {label: '日期', prop:'date',slot: true,className:'date'},
           {label: '姓名', prop:'name',formatter: this.formatterName},
           {label: '地址', prop:'address'},
         ]
@@ -133,3 +133,10 @@
     }
   }
 </script>
+
+<style lang="scss">
+  td.date {
+    padding: 0;
+    background: linear-gradient(to right, rgba(94, 152, 191, 0.53) 20%, transparent 20%); /* 标准的语法（必须放在最后） */
+  }
+</style>

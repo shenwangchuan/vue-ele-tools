@@ -28,6 +28,7 @@
         :header-align="item.headerAlign ? item.headerAlign : headerAlign"
         :width="item.width"
         :min-width="item.minWidth"
+        :class-name="item.className"
         :label="item.label"
         :prop="item.prop"
         :formatter="item.formatter">
@@ -44,6 +45,7 @@
         :header-align="item.headerAlign ? item.headerAlign : headerAlign"
         :width="item.width"
         :min-width="item.minWidth"
+        :class-name="item.className"
         :label="item.label"
         :prop="item.prop"
         :formatter="item.formatter"/>
