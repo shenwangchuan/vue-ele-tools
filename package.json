@@ -1,6 +1,6 @@
 {
   "name": "vue-ele-tools",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "vue+elementUI自定义组件",
   "author": "shenwangchuan <yisu512@sina.com>",
   "scripts": {
@@ -9,7 +9,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "element-ui": "^2.8.2",
+    "element-ui": "^2.9.1",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },
