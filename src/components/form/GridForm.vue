@@ -61,30 +61,9 @@
         :options="item.options"
         :props="item.props"
         v-model="form[item.name]"
+        :show-all-levels="item.showAllLevels"
         :placeholder="item.placeholder"
       ></el-cascader>
-      <!--值为String的级联选择器-->
-      <v-el-val-cascader
-        v-if="item.type === 'valCascader'"
-        :options="item.options"
-        :props="item.props"
-        v-model="form[item.name]"
-        :placeholder="item.placeholder"
-      ></v-el-val-cascader>
-      <!--下拉树-->
-      <v-el-tree-select
-        v-if="item.type === 'treeSelect'"
-        v-model="form[item.name]"
-        :options="item.options"
-        :props="item.props"
-        :placeholder="item.placeholder"
-        :multiple="item.multiple"
-        :filterable="item.filterable"
-        :clearable="item.clearable"
-        :disabled="item.disabled"
-        :accordion="item.accordion"
-        :check-strictly="item.checkStrictly"
-      ></v-el-tree-select>
       <!--插槽-->
       <template v-if="item.type === 'slot'">
         <slot :name="item.name" :item="item" :form="form"></slot>
@@ -98,11 +77,8 @@
 </template>
 
 <script type="es6">
-  import VElTreeSelect from './../treeSelect/TreeSelect'
-  import VElValCascader from './../valCascader/ValCascader'
 export default {
   name: "v-el-form",
-  components: {VElTreeSelect,VElValCascader},
   props: {
     data: {
       type: Array,
@@ -140,7 +116,7 @@ export default {
 </script>
 
 <style scoped lang="scss" type="text/scss">
-.GridForm {
+.VElForm {
   .btns-block {
     display: block;
     text-align: center;

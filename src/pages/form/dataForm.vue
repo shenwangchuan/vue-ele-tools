@@ -104,7 +104,7 @@
         }
 
         const itemAttr = [
-          {param:'type',description:'组件类型',type:'string',optional:'input/select/date/slot',default:'—'},
+          {param:'type',description:'组件类型',type:'string',optional:'input/select/date/cascader/slot',default:'—'},
           {param:'name',description:'组件对应表单字段',type:'string',optional:'—',default:'—'},
           {param:'label',description:'组件显示标签',type:'string',optional:'—',default:'—'},
           {param:'labelWidth',description:'表单域标签的的宽度',type:'string',optional:'—',default:'—'},
