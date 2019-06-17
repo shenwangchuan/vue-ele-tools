@@ -3,9 +3,9 @@
   <div class="dataTable">
     <el-card shadow="never" header="v-el-table">
       <p>根据提供的数据快速生成表格，相对于element ui 的el-table组件，需传入表头数据数组，支持自定义和格式化列内容</p>
-      <v-el-table :data="tableData" :col-data="tableCol">
+      <v-el-table :data="tableData" border :col-data="tableCol">
         <template slot="date" slot-scope="scope">
-          <div><i class="el-icon-time"></i> {{scope.row.date}}</div>
+          <i class="el-icon-time"></i> {{scope.row.date}}
         </template>
       </v-el-table>
     </el-card>
@@ -75,7 +75,7 @@
         this.tableCol = [
           {type:'index',label: '#'},
           {type:'selection'},
-          {label: '日期', prop:'date',slot: true,className:'date'},
+          {label: '日期', prop:'date',slot: true},
           {label: '姓名', prop:'name',formatter: this.formatterName},
           {label: '地址', prop:'address'},
         ]
@@ -133,10 +133,3 @@
     }
   }
 </script>
-
-<style lang="scss">
-  td.date {
-    padding: 0;
-    background: linear-gradient(to right, rgba(94, 152, 191, 0.53) 20%, transparent 20%); /* 标准的语法（必须放在最后） */
-  }
-</style>

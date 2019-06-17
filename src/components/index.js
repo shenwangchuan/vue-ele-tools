@@ -1,4 +1,4 @@
-import VElTable from './table/GridTable.vue'
+import VElTable from './table/Table.vue'
 import VElForm from './form/GridForm.vue'
 import VElTreeSelect from './treeSelect/TreeSelect.vue'
 import VElPagination from './pagination/Pagination.vue'
